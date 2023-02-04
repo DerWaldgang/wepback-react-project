@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      // подсвечитвает все места где не указан тип 
+      "noImplicitAny": true,
+      "module": "ESNext",
+      // для поддержки большинства браузеров
+      "target": "es5",
+      // react-jsx - чтобы не жаловался когда пишет jsx код, мол отсутсвует import React from 'react', теперь можно не импортировать React
+      "jsx": "react-jsx",
+      // Компилятор будет обрабатывать не только js файлы, но и ts
+      "allowJs": true,
+      // для абсолютного импорта
+    //   "baseUrl": ".",
+      "moduleResolution": "node",
+      // esModuleInterop позволяет работать с пакетами которые используют common js как с обычными пакетами (require() module.exports()) = common js
+      // import Moment from "moment
+      // без флага esModuleInterop результать в console.log(Moment) - был бы undefined
+      // с флагом в console.log(Moment) - [object Object]
+      "esModuleInterop": true,
+      // если какая то библиотека на имеет defaul exports то ts-loader или babel-loader автоматический создают их 
+      // и вместо impoort * as React from 'react' можно писать import React from 'react' => allowSyntheticDefaultImports: true
+      "allowSyntheticDefaultImports": true,
+    },
+    // иначе жалется что import path from 'path';
+    //                   ^^^^^^
+    // SyntaxError: Cannot use import statement outside a module
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS"
+        }
+      }
+  }
