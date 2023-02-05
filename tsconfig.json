@@ -10,8 +10,11 @@
       "jsx": "react-jsx",
       // Компилятор будет обрабатывать не только js файлы, но и ts
       "allowJs": true,
-      // для абсолютного импорта
-    //   "baseUrl": ".",
+      // для абсолютного импорта из папки src 
+      "baseUrl": ".",
+      "paths": {
+        "*": ["./src/*"]
+      },
       "moduleResolution": "node",
       // esModuleInterop позволяет работать с пакетами которые используют common js как с обычными пакетами (require() module.exports()) = common js
       // import Moment from "moment

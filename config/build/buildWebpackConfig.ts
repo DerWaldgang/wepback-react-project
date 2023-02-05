@@ -1,4 +1,3 @@
-import path from "path";
 import webpack from "webpack";
 import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
@@ -25,6 +24,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
           rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
       };
 }
