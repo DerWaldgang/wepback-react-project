@@ -5,7 +5,31 @@ import { BuildOptions } from "./types/config.interface";
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   // Порядок в лоадерах имеет значение
   // Если не используем typescript - то нужен был бы еще babel-loader под jsx
+  // const fileLoader = {
+  //   test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+  //   use: [
+  //     {
+  //       loader: "file-loader",
+  //     },
+  //   ],
+  // };
+  // const svgLoader = {
+  //   test: /\.svg$/,
+  //   use: ["@svgr/webpack"],
+  // };
 
+  // webpack 5 svg и file loaderы deprecated - лучше использовать через assets/resource
+  const svgLoader: webpack.RuleSetRule = {
+    test: /\.svg$/,
+    type: "asset/resource",
+    // generator: {
+    // filename: options.paths.assets.svg,
+    // }
+  };
+  const fileLoader: webpack.RuleSetRule = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+  };
   const cssSassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -37,5 +61,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssSassLoader];
+  return [fileLoader, svgLoader, typescriptLoader, cssSassLoader];
 }

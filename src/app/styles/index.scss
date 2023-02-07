@@ -8,4 +8,15 @@
     background-color: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;
+
+    transition: background-color 200ms;
+}
+
+.content-page {
+    display: flex;
+}
+
+.page-wrapper {
+    flex-grow: 1;
+    padding: 2rem;
 }

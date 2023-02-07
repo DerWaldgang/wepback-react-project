@@ -15,6 +15,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
           filename: "[name].[contenthash].js",
           path: paths.build,
           clean: true,
+          assetModuleFilename: 'assets/[hash][ext]'
         },
         // Чтобы на production в bundle не попадали sourceMappingURL
         devtool: isDev ? 'inline-source-map' : undefined,
