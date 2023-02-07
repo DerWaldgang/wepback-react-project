@@ -10,5 +10,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration{
         // нужно чтобы запоминал свои роут, иначе если перейти на страницу /about с главной страницы все будет работать, 
         // а потом обновить страницу то /about выдаст ошибку что нет такой страницы 
         historyApiFallback: true,
+        hot: true,
     }
 }

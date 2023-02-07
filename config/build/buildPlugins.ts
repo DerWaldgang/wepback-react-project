@@ -13,8 +13,11 @@ export function buildPlugins({paths, isDev}:BuildOptions): webpack.WebpackPlugin
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
+    // чтобы использовать переменную где угодно в проекте наприме __IS_DEV__ в папке i18n
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
-    })
+    }),
+    // чтобы wepback devserver сразу подхватывал изменения без обновления сайта
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
