@@ -23,6 +23,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             </div>
             <div className={styles.links}>
                 <AppLink theme={AppLinkTheme.SECONDARY} to="/">{t('Home')}</AppLink>
+                {/* eslint-disable-next-line i18next/no-literal-string */}
                 <AppLink theme={AppLinkTheme.SECONDARY} to="/about">{t('About')}</AppLink>
             </div>
         </nav>
