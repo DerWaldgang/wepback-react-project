@@ -1,10 +1,11 @@
 import { FC, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routerConfig } from 'shared/config/RouterConfig/RouterConfig';
+import { PageLoader } from 'widgets/PageLoader';
 
 const AppRouter: FC = () => (
     // eslint-disable-next-line i18next/no-literal-string
-    <Suspense fallback={<div>LOADING...</div>}>
+    <Suspense fallback={<PageLoader />}>
         <Routes>
             {Object.values(routerConfig).map(({ path, element }) => (
                 <Route
