@@ -11,7 +11,6 @@ import { AppRouter } from './providers/RouterProvider';
 
 const App: FC = () => {
     const { theme } = useTheme();
-    
     // For testing ErrorBoundary catch
 
     // const [error, setError] = useState(false);
