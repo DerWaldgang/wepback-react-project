@@ -1,7 +1,9 @@
 {
   "123": "123",
   "About": "About",
+  "Error": "Error",
   "Home": "Home",
   "Language": "Language",
-  "NotFound": "NotFound"
+  "NotFound": "NotFound",
+  "Refresh page": "Refresh page"
 }
