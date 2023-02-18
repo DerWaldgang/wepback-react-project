@@ -8,8 +8,7 @@ export function buildPlugins({
     paths,
     isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
-        new webpack.ProgressPlugin(),
+    const plugins = [new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
@@ -20,11 +19,15 @@ export function buildPlugins({
         // чтобы использовать переменную где угодно в проекте наприме __IS_DEV__ в папке i18n
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-        }),
+        })];
+
+    if (isDev) {
         // чтобы wepback devserver сразу подхватывал изменения без обновления сайта
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
-        }),
-    ];
+        })); 
+    }
+
+    return plugins;
 }
