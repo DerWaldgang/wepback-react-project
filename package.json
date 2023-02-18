@@ -2,7 +2,7 @@
   "name": "production-strong_middle-project",
   "version": "1.0.0",
   "description": "",
-  
+
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
@@ -15,7 +15,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "npx loki update --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
   },
@@ -91,6 +91,9 @@
     "react-toggle-dark-mode": "^1.1.1"
   },
   "loki": {
+    "looks-same": {
+      "ignoreCaret": true
+    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
