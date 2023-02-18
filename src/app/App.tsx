@@ -1,5 +1,5 @@
 import {
-    FC, Suspense, useEffect, useState,
+    FC, Suspense,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 

@@ -1,6 +1,6 @@
 /build
 node_modules
-
+/storybook-static
 
 **/.vscode/settings.json
 **/.DS_Store
