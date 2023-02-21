@@ -33,19 +33,16 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     //     },
     //   ],
     // };
-    // const svgLoader = {
-    //   test: /\.svg$/,
-    //   use: ["@svgr/webpack"],
-    // };
+    const svgLoader = {
+        test: /\.svg$/i,
+        use: [{ loader: '@svgr/webpack', options: { icon: true, dimensions: false } }],
+    };
 
     // webpack 5 svg и file loaderы deprecated - лучше использовать через assets/resource
-    const svgLoader: webpack.RuleSetRule = {
-        test: /\.svg$/,
-        type: 'asset/resource',
-    // generator: {
-    // filename: options.paths.assets.svg,
-    // }
-    };
+    // const svgLoader: webpack.RuleSetRule = {
+    //     test: /\.svg$/,
+    //     type: 'asset/resource',
+    // };
     const fileLoader: webpack.RuleSetRule = {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -58,5 +55,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
     // важен порядок, к пример babelLoader должен стоять до typescriptLoader
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssSassLoader];
+    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssSassLoader];
 }

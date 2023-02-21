@@ -6,7 +6,10 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l)  var(--font-family-main);
-    --navbar-height: 50px;
-    --sidebar-width: 18%;
-    --sidebar-width-collapsed: 4.4%;
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl)  var(--font-family-main);
+    --navbar-height: 60px;
+    --sidebar-width: 16%;
+    --sidebar-width-collapsed: 4.6%;
 }
