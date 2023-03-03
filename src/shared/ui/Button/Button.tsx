@@ -5,9 +5,9 @@ import styles from './Button.module.scss';
 export enum ThemeButton {
     CLEAR ='clear',
     OUTLINE = 'outline',
+    OUTLINE_INVERTED = 'outlineInverted',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted'
-
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum SizeButton {

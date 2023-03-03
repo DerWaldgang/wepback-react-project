@@ -37,6 +37,12 @@ OutlineDark.args = {
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const InvertedOutline = Template.bind({});
+InvertedOutline.args = {
+    children: 'Test',
+    theme: ThemeButton.OUTLINE_INVERTED,
+};
+
 export const BackgroundTheme = Template.bind({});
 BackgroundTheme.args = {
     children: 'Test',

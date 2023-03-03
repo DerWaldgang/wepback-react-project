@@ -6,9 +6,11 @@
   "Error": "Error",
   "Home": "Home",
   "Language": "Language",
+  "Login": "Login",
   "NotFound": "NotFound",
   "Refresh page": "Refresh page",
   "op": "op",
   "open": "open",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "Войти": "Войти"
 }

@@ -3,10 +3,13 @@
 @import "themes/dark";
 @import "themes/light";
 
-.app {
+body {
     font: var(--font-m);
-    background-color: var(--bg-color);
     color: var(--primary-color);
+}
+
+.app {
+    background-color: var(--bg-color);
     min-height: 100vh;
     transition: background-color 200ms;
 }
