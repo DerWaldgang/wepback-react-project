@@ -1,5 +1,5 @@
 import {
-    FC, ReactNode, useEffect, useMemo, useState,
+    FC, ReactNode, useMemo, useState,
 } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY,
@@ -14,18 +14,6 @@ interface ThemeProviderProps {
 }
 const ThemeProvider: FC<ThemeProviderProps> = ({ initialTheme, children }) => {
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
-
-    useEffect(() => {
-        if (!document.body.classList.contains(theme)) {
-            console.log(theme, 'THEME');
-            document.body.classList.add('app');
-            document.body.classList.add(theme);
-        }
-        return () => {
-            document.body.classList.add('app');
-            document.body.classList.remove(theme);
-        };
-    }, [theme]);
 
     const defaultProps = useMemo(() => ({
         theme,

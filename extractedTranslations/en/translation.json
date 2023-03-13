@@ -9,6 +9,8 @@
   "Login": "Login",
   "NotFound": "NotFound",
   "Refresh page": "Refresh page",
+  "decrement": "decrement",
+  "increment": "increment",
   "op": "op",
   "open": "open",
   "toggle": "toggle",

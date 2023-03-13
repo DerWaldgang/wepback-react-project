@@ -8,12 +8,16 @@ interface IUseThemeResult {
 
 export const useTheme = ():IUseThemeResult => {
     const { theme, setTheme } = useContext(ThemeContext);
+    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
 
     const toggleTheme = () => {
-        const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
+
+    useEffect(() => {
+        document.body.className = newTheme;
+    }, [newTheme]);
 
     return { theme, toggleTheme };
 };

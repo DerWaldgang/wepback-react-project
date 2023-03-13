@@ -1,4 +1,8 @@
 .ThemeSwitcher {
+    background-color: var(--inverted-primary-color) !important;
+    border-radius: 50%;
+    padding: 1px;
+    /* stylelint-disable-next-line rule-empty-line-before */
     > svg {
         width: 32px;
         height: 32px;
