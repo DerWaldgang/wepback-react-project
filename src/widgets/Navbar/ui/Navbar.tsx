@@ -1,5 +1,4 @@
 import { FC, useCallback, useState } from 'react';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'features/ui/ThemeSwitcher';
@@ -7,6 +6,7 @@ import { LangSwitcher } from 'features/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 
 import profileImg from 'shared/assets/icons/user-32-32.png';
+import { LoginModal } from 'features/AuthByUser';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -17,8 +17,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
-    const onToggleModal = useCallback(() => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -31,12 +35,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             <Button
                 theme={ThemeButton.OUTLINE_INVERTED}
                 className={styles.loginBtn}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('Login')}
 
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>1231241232341231212312315123</Modal>
+            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
         </nav>
     );
 };

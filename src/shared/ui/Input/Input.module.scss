@@ -1,0 +1,43 @@
+.InputWrapper {
+    display: flex;
+}
+
+.placeholder {
+    margin-right: 5px;
+}
+
+.Input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: transparent;
+    text-shadow: 0 0 0 var(--inverted-primary-color);
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+.carriageWrapper {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.carriage {
+    height: 3px;
+    width: 9px;
+    background: var(--inverted-primary-color);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    animation: blink 0.7s forwards infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 0.01; }
+    100% { opacity: 1; }
+}
