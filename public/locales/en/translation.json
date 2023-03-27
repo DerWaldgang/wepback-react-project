@@ -8,5 +8,8 @@
   "toggle": "toggle",
   "Login": "Login",
   "Enter username": "Enter username",
-  "Enter password": "Enter password"
+  "Enter password": "Enter password",
+  "Auth": "Authorization:",
+  "Login error message": "Wrong username or password!",
+  "Logout": "Logout"
 }

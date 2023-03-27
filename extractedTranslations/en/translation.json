@@ -9,13 +9,17 @@
   "\"Введите логин\"": "\"Введите логин\"",
   "123": "123",
   ">": ">",
+  "A": "A",
   "About": "About",
+  "Auth": "Auth",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Error": "Error",
   "Home": "Home",
   "Language": "Language",
   "Login": "Login",
+  "Login error message": "Login error message",
+  "Logout": "Logout",
   "NotFound": "NotFound",
   "Refresh page": "Refresh page",
   "decrement": "decrement",
@@ -27,5 +31,6 @@
   "toggle": "toggle",
   "Введите": "Введите",
   "Введите \"": "Введите \"",
-  "Войти": "Войти"
+  "Войти": "Войти",
+  "Неверный логин или пароль": "Неверный логин или пароль"
 }

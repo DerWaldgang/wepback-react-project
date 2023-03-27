@@ -8,5 +8,8 @@
   "toggle": "тогл",
   "Login": "Войти",
   "Enter username": "Введите имя пользователя",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "Auth": "Aвторизация:",
+  "Login error message": "Неверный логин или пароль!",
+  "Logout": "Выйти"
 }

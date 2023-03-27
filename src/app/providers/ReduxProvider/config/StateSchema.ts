@@ -1,7 +1,9 @@
 import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
+import { LoginSchema } from 'features/AuthByUser';
 
 export interface StateSchema {
-    counter: CounterSchema;
+    counter: CounterSchema,
     user: UserSchema,
+    loginForm?: LoginSchema
 }
