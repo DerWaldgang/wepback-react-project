@@ -21,12 +21,13 @@ export function buildPlugins({
             __IS_DEV__: JSON.stringify(isDev),
         })];
 
+    plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: true,
+    }));
+
     if (isDev) {
         // чтобы wepback devserver сразу подхватывал изменения без обновления сайта
         plugins.push(new webpack.HotModuleReplacementPlugin());
-        plugins.push(new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }));
     }
 
     return plugins;
