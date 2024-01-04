@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const HomePage: FC = () => {
-    const { t } = useTranslation('home');
+    const { t } = useTranslation('');
     return (
         <div>
             {t('Home')}

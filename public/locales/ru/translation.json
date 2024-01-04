@@ -1,15 +1,18 @@
 {
   "Language": "RU",
   "Home": "Главная",
-  "About": "О сайте",
+  "About": "О нас",
   "NotFound": "Страница не найдена 404",
   "Error": "Произошла ошибка",
   "Refresh page": "Обновить страницу\n",
   "toggle": "тогл",
   "Login": "Войти",
+  "increment": "увеличить",
+  "decrement": "уменьшить",
   "Enter username": "Введите имя пользователя",
   "Enter password": "Введите пароль",
   "Auth": "Aвторизация:",
   "Login error message": "Неверный логин или пароль!",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Profile": "Профиль"
 }

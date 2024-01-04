@@ -1,14 +1,14 @@
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import { FC, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
 className?: string;
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     const [isLightMode, setLightMode] = useState(theme === Theme.LIGHT);
 
@@ -25,4 +25,4 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
             checked={isLightMode}
         />
     );
-};
+});

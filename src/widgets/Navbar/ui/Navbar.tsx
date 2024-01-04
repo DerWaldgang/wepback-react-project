@@ -1,34 +1,34 @@
-import {
-    FC, useCallback, useEffect, useState,
-} from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ThemeSwitcher } from 'features/ui/ThemeSwitcher';
-import { LangSwitcher } from 'features/ui/LangSwitcher';
-import { useTranslation } from 'react-i18next';
-import { LoginModal } from 'features/AuthByUser';
 import { getUserAuthData, userActions } from 'entities/User';
+import { LoginModal } from 'features/AuthByUser';
+import { LangSwitcher } from 'features/ui/LangSwitcher';
+import { ThemeSwitcher } from 'features/ui/ThemeSwitcher';
+import {
+    memo, useCallback, useEffect, useState,
+} from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
+import { useSelector } from 'react-redux';
 import profileImg from 'shared/assets/icons/user-32-32.png';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
-    const userData = useSelector(getUserAuthData);
+    const dispatch = useAppDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const authData = useSelector(getUserAuthData);
+    const isAuth = useSelector(getUserAuthData);
 
     useEffect(() => {
-        if (userData) {
+        if (isAuth) {
             setIsAuthModal(false);
         }
-    }, [userData]);
+    }, [isAuth]);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -42,7 +42,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    if (authData) {
+    if (isAuth) {
         return (
             <nav className={classNames(styles.Navbar, {}, [className])}>
                 <div className={styles.features}>
@@ -79,4 +79,4 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </nav>
     );
-};
+});

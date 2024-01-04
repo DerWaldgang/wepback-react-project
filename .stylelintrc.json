@@ -2,7 +2,11 @@
     "extends": "stylelint-config-standard-scss",
     "rules": {
       "indentation": [4],
-      "selector-class-pattern": null
+      "selector-class-pattern": null,
+      "block-no-empty": null,
+      "no-eol-whitespace": null,
+      "block-closing-brace-empty-line-before": null,
+      "at-rule-empty-line-before": null
     }
   }
   

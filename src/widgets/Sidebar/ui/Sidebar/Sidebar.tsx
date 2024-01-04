@@ -1,51 +1,31 @@
-import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/RouterConfig/RouterConfig';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, SizeButton, ThemeButton } from 'shared/ui/Button/Button';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import HomeIcon from 'shared/assets/icons/main-20-20.svg';
+import { sidebarItemList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
 className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
-    const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
-
+export const Sidebar = memo(({ className }: SidebarProps) => {
+    const [isCollapsed, seIsCollapsed] = useState(false);
     const onToggle = () => {
-        setCollapsed(!collapsed);
+        seIsCollapsed(!isCollapsed);
     };
+
+    const sidebaListMapper = useMemo(() => sidebarItemList.map((item) => (
+        <SidebarItem key={item.path} item={item} isCollapsed={isCollapsed} />
+    )), [isCollapsed]);
 
     return (
         <div
             data-testid="sidebar"
-            className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
+            className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
         >
             <div className={styles.items}>
-                <div className={styles.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        className={styles.link}
-                        to={RoutePath.home}
-                    >
-                        <HomeIcon className={styles.icon} />
-                        <span>{t('Home')}</span>
-                    </AppLink>
-                </div>
-                <div className={styles.item}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        className={styles.link}
-                        to={RoutePath.about}
-                    >
-                        <AboutIcon className={styles.icon} />
-                        <span>{t('About')}</span>
-                    </AppLink>
-                </div>
+                {sidebaListMapper}
             </div>
 
             <Button
@@ -57,9 +37,8 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
                 square
                 size={SizeButton.L}
             >
-                {collapsed ? '>' : '<'}
+                {isCollapsed ? '>' : '<'}
             </Button>
-
         </div>
     );
-};
+});

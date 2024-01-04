@@ -20,40 +20,21 @@
     gap: 15px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    display: flex;
-    align-items: center;
-
-    .icon {
-        width: 30px;
-        height: 30px;
-        fill: var(--inverted-primary-color);
-        margin-right: 5px;
-    }
-
-    > span {
-        opacity: 1;
-    }
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
-    .link {
-        flex-direction: column;
+    .SidebarItem {
+        .link {
+            flex-direction: column;
+            
+            .icon {
+                margin: 0;
+            }
 
-        .icon {
-            margin: 0;
-        }
-
-        > span {
-            opacity: 0;
-            transition: 100ms opacity ease-in;
+            > span {
+                opacity: 0;
+                transition: 100ms opacity ease-in;
+            }
         }
     }
 }

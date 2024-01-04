@@ -1,15 +1,18 @@
 {
   "Language": "EN",
   "Home": "Home",
-  "About": "About",
-  "NotFound": "Page not Fount 404 ",
+  "About us": "About us",
+  "NotFound": "Page not Found 404",
   "Error": "Error",
   "Refresh page": "Refresh page",
   "toggle": "toggle",
   "Login": "Login",
+  "increment": "increment",
+  "decrement": "decrement",
   "Enter username": "Enter username",
   "Enter password": "Enter password",
   "Auth": "Authorization:",
   "Login error message": "Wrong username or password!",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile": "Profile"
 }
