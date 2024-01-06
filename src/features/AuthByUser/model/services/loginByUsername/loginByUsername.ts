@@ -29,7 +29,7 @@ export const loginByUsername = createAsyncThunk<
 
              return response.data;
          } catch (error) {
-             console.error('Error in loginByUsername.ts ', error);
+             console.log('Error in loginByUsername.ts ', error);
              return rejectWithValue('Error');
          }
      },
