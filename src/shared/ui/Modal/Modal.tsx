@@ -1,7 +1,7 @@
 import {
     FC, ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 
 import styles from './Modal.module.scss';
@@ -9,7 +9,7 @@ import styles from './Modal.module.scss';
 interface ModalProps {
     className?: string;
     children?: ReactNode
-    isOpen?: boolean;
+    isOpen: boolean;
     onClose?: () => void;
     lazy?: boolean;
 }
@@ -23,7 +23,7 @@ export const Modal: FC<ModalProps> = ({
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing,
     };

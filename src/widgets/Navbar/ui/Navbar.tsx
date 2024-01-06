@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { selectUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUser';
 import { LangSwitcher } from 'features/ui/LangSwitcher';
 import { ThemeSwitcher } from 'features/ui/ThemeSwitcher';
@@ -22,7 +22,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const isAuth = useSelector(getUserAuthData);
+    const isAuth = useSelector(selectUserAuthData);
 
     useEffect(() => {
         if (isAuth) {

@@ -14,5 +14,8 @@
   "Auth": "Aвторизация:",
   "Login error message": "Неверный логин или пароль!",
   "Logout": "Выйти",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Your name": "Ваше имя",
+  "Your surname": "Ваша фамилия"
 }

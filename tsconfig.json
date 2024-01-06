@@ -10,6 +10,8 @@
       "jsx": "react-jsx",
       // Компилятор будет обрабатывать не только js файлы, но и ts
       "allowJs": true,
+      // Strict mode для TS
+      "strict": true,
       // для абсолютного импорта из папки src 
       "baseUrl": ".",
       "paths": {

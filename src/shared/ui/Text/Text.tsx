@@ -1,10 +1,11 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import styles from './Text.module.scss';
 
 export enum ThemeText {
     PRIMARY = 'primary',
     ERROR = 'error',
+    INVERTED = 'inverted'
 }
 interface TextProps {
     className?: string;
@@ -15,9 +16,9 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
     const {
-        className, title, text, theme,
+        className, title, text, theme = ThemeText.PRIMARY,
     } = props;
-    const mods : Record<string, boolean> = { [styles[theme]]: true };
+    const mods : Mods = { [styles[theme]]: true };
     return (
         <div className={classNames(styles.Text, mods, [className])}>
             {title && <p className={styles.title}>{title}</p>}

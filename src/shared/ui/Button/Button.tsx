@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
 export enum ThemeButton {
@@ -25,9 +25,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo(({
-    className, children, theme, square, size = SizeButton.M, ...otherProps
+    className, children, theme = ThemeButton.CLEAR, square = false, size = SizeButton.M, ...otherProps
 }: ButtonProps) => {
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.square]: square,
         [styles[size]]: true,
     };

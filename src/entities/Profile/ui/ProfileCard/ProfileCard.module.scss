@@ -1,0 +1,30 @@
+.ProfileCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+
+    .edit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .data {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .input {
+        width: 100%;
+
+        >div {
+            >input {
+                text-shadow: 0 0 0 var(--primary-color);
+            }
+        }
+    }
+}

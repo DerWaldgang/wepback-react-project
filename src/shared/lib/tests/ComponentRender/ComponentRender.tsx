@@ -13,12 +13,13 @@ export interface RenderWithRouterOptions {
 export function ComponentRender(component: ReactNode, options:RenderWithRouterOptions = {}) {
     const { route = '/', initialState } = options;
     return render(
-        <ReduxProvider initialState={initialState}>
-            <MemoryRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
+            <ReduxProvider initialState={initialState}>
                 <I18nextProvider i18n={i18nForTest}>
                     {component}
                 </I18nextProvider>
-            </MemoryRouter>
-        </ReduxProvider>,
+            </ReduxProvider>
+        </MemoryRouter>,
+
     );
 }

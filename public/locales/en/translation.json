@@ -14,5 +14,8 @@
   "Auth": "Authorization:",
   "Login error message": "Wrong username or password!",
   "Logout": "Logout",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Your name": "Your name",
+  "Your surname": "Your surname"
 }

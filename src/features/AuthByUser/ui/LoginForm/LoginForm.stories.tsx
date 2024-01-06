@@ -14,4 +14,4 @@ const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [ReduxDecorator({ loginForm: { username: 'foo', password: 'bar' } })];
+Primary.decorators = [ReduxDecorator({ loginForm: { username: 'foo', password: 'bar', isLoading: false } })];

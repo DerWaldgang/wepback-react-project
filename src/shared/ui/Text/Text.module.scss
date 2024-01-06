@@ -19,3 +19,13 @@
         color: var(--color-error);
     }
 }
+
+.inverted {
+    .title {
+        color: var(--primary-color);
+    }
+
+    .text {
+        color: var(--secondary-color);
+    }
+}
