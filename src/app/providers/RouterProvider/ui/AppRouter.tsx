@@ -1,25 +1,37 @@
-import { FC, Suspense } from 'react';
+import { selectUserAuthData } from 'entities/User';
+import { FC, Suspense, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { routerConfig } from 'shared/config/RouterConfig/RouterConfig';
 import { PageLoader } from 'widgets/PageLoader';
 
-const AppRouter: FC = () => (
-    // eslint-disable-next-line i18next/no-literal-string
+const AppRouter: FC = () => {
+  const isAuth = useSelector(selectUserAuthData);
+
+  const routes = useMemo(() => Object.values(routerConfig).filter((route) => {
+    if (route.isAuthOnly && !isAuth) {
+      return false;
+    }
+    return true;
+  }), [isAuth]);
+
+  return (
     <Suspense fallback={<PageLoader />}>
-        <Routes>
-            {Object.values(routerConfig).map(({ path, element }) => (
-                <Route
-                    path={path}
-                    element={(
-                        <div className="page-wrapper">
-                            {element}
-                        </div>
+      <Routes>
+        {routes.map(({ path, element }) => (
+          <Route
+            path={path}
+            element={(
+              <div className="page-wrapper">
+                {element}
+              </div>
                     )}
-                    key={path}
-                />
-            )) }
-        </Routes>
+            key={path}
+          />
+        )) }
+      </Routes>
     </Suspense>
-);
+  );
+};
 
 export default AppRouter;

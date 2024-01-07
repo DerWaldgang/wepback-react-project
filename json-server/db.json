@@ -1,39 +1,38 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "json-server",
-        "userId": "1"
-      },
-      {
-        "id": "2",
-        "title": "json-server",
-        "userId": "2"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-      }
-    ],
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "12345"
-      }
-    ],
-    "profile": {
-      "firstname": "Admin",
-      "lastname": "Main",
-      "age": "23",
-      "currency": "ETH",
-      "country": "Japan",
-      "city": "Mecca",
-      "username": "admin",
-      "avatar": "https://res.cloudinary.com/teepublic/image/private/s--jSVyMso6--/c_crop,x_10,y_10/c_fit,h_830/c_crop,g_north_west,h_1038,w_1038,x_-131,y_-104/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-242,y_-215/b_rgb:000000/c_limit,f_jpg,h_630,q_90,w_630/v1670520056/production/designs/37275998_0.jpg"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "12345"
+    }
+  ],
+  "profile": {
+    "firstname": "Adminsky",
+    "lastname": "Mainoev",
+    "age": "23",
+    "currency": "Etherium",
+    "country": "America",
+    "city": "City",
+    "username": "@admin",
+    "avatar": "https://static.vecteezy.com/system/header_search_link/thumbnail/34/hsl_large_term-bg-1__1_.jpg"
   }
-  
+}

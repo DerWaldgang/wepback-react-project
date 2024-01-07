@@ -1,0 +1,12 @@
+.ProfilePageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .buttonContainer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

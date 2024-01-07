@@ -25,19 +25,19 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo(({
-    className, children, theme = ThemeButton.CLEAR, square = false, size = SizeButton.M, ...otherProps
+  className, children, theme = ThemeButton.CLEAR, square = false, size = SizeButton.M, ...otherProps
 }: ButtonProps) => {
-    const mods: Mods = {
-        [styles.square]: square,
-        [styles[size]]: true,
-    };
-    return (
-        <button
-            type="button"
-            className={classNames(styles.Button, mods, [className, styles[theme]])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
+  const mods: Mods = {
+    [styles.square]: square,
+    [styles[size]]: true,
+  };
+  return (
+    <button
+      type="button"
+      className={classNames(styles.Button, mods, [className, styles[theme]])}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
 });

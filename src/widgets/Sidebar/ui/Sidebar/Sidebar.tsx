@@ -10,35 +10,35 @@ className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [isCollapsed, seIsCollapsed] = useState(false);
-    const onToggle = () => {
-        seIsCollapsed(!isCollapsed);
-    };
+  const [isCollapsed, seIsCollapsed] = useState(false);
+  const onToggle = () => {
+    seIsCollapsed(!isCollapsed);
+  };
 
-    const sidebaListMapper = useMemo(() => sidebarItemList.map((item) => (
-        <SidebarItem key={item.path} item={item} isCollapsed={isCollapsed} />
-    )), [isCollapsed]);
+  const sidebaListMapper = useMemo(() => sidebarItemList.map((item) => (
+    <SidebarItem key={item.path} item={item} isCollapsed={isCollapsed} />
+  )), [isCollapsed]);
 
-    return (
-        <div
-            data-testid="sidebar"
-            className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
-        >
-            <div className={styles.items}>
-                {sidebaListMapper}
-            </div>
+  return (
+    <div
+      data-testid="sidebar"
+      className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
+    >
+      <div className={styles.items}>
+        {sidebaListMapper}
+      </div>
 
-            <Button
-                data-testid="sidebar-toggle"
-                type="button"
-                onClick={() => onToggle()}
-                className={styles.collapseBtn}
-                theme={ThemeButton.BACKGROUND_INVERTED}
-                square
-                size={SizeButton.L}
-            >
-                {isCollapsed ? '>' : '<'}
-            </Button>
-        </div>
-    );
+      <Button
+        data-testid="sidebar-toggle"
+        type="button"
+        onClick={() => onToggle()}
+        className={styles.collapseBtn}
+        theme={ThemeButton.BACKGROUND_INVERTED}
+        square
+        size={SizeButton.L}
+      >
+        {isCollapsed ? '>' : '<'}
+      </Button>
+    </div>
+  );
 });

@@ -5,11 +5,11 @@ import { Theme } from 'app/providers/ThemeProvider';
 import HomePage from './HomePage';
 
 export default {
-    title: 'pages/HomePage',
-    component: HomePage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/HomePage',
+  component: HomePage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof HomePage>;
 
 const Template: ComponentStory<typeof HomePage> = (args) => <HomePage {...args} />;

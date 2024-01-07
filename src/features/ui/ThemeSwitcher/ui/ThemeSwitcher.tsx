@@ -9,20 +9,20 @@ className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-    const { theme, toggleTheme } = useTheme();
-    const [isLightMode, setLightMode] = useState(theme === Theme.LIGHT);
+  const { theme, toggleTheme } = useTheme();
+  const [isLightMode, setLightMode] = useState(theme === Theme.LIGHT);
 
-    const handleSwitch = () => {
-        toggleTheme();
-        setLightMode(!isLightMode);
-    };
+  const handleSwitch = () => {
+    toggleTheme();
+    setLightMode(!isLightMode);
+  };
 
-    return (
-        <DarkModeSwitch
-            size={30}
-            className={classNames(styles.ThemeSwitcher, {}, [className])}
-            onChange={() => handleSwitch()}
-            checked={isLightMode}
-        />
-    );
+  return (
+    <DarkModeSwitch
+      size={30}
+      className={classNames(styles.ThemeSwitcher, {}, [className])}
+      onChange={() => handleSwitch()}
+      checked={isLightMode}
+    />
+  );
 });

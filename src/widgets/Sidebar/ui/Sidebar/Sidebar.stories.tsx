@@ -4,11 +4,11 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Sidebar } from './Sidebar';
 
 export default {
-    title: 'widget/Sidebar',
-    component: Sidebar,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'widget/Sidebar',
+  component: Sidebar,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as ComponentMeta<typeof Sidebar>;
 
 const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;

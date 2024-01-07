@@ -17,5 +17,11 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your name": "Your name",
-  "Your surname": "Your surname"
+  "Your surname": "Your surname",
+  "Failed to get profile data": "Failed to get profile data",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Your city": "Your city",
+  "Your age": "Your age",
+  "Your username": "Your username"
 }

@@ -11,15 +11,15 @@ export interface RenderWithRouterOptions {
     initialState?: DeepPartial<StateSchema>;
 }
 export function ComponentRender(component: ReactNode, options:RenderWithRouterOptions = {}) {
-    const { route = '/', initialState } = options;
-    return render(
-        <MemoryRouter initialEntries={[route]}>
-            <ReduxProvider initialState={initialState}>
-                <I18nextProvider i18n={i18nForTest}>
-                    {component}
-                </I18nextProvider>
-            </ReduxProvider>
-        </MemoryRouter>,
+  const { route = '/', initialState } = options;
+  return render(
+    <MemoryRouter initialEntries={[route]}>
+      <ReduxProvider initialState={initialState}>
+        <I18nextProvider i18n={i18nForTest}>
+          {component}
+        </I18nextProvider>
+      </ReduxProvider>
+    </MemoryRouter>,
 
-    );
+  );
 }

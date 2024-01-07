@@ -9,20 +9,20 @@ className?: string;
 }
 
 export const PageError: FC<PageErrorProps> = ({ className }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    const reloadPage = () => {
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
-    };
+  const reloadPage = () => {
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+  };
 
-    return (
-        <div className={classNames(styles.PageError, {}, [className])}>
-            <p>{t('Error')}</p>
+  return (
+    <div className={classNames(styles.PageError, {}, [className])}>
+      <p>{t('Error')}</p>
 
-            <Button onClick={reloadPage}>
-                {t('Refresh page')}
-            </Button>
-        </div>
-    );
+      <Button onClick={reloadPage}>
+        {t('Refresh page')}
+      </Button>
+    </div>
+  );
 };

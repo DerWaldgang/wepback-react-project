@@ -1,5 +1,5 @@
 import {
-    FC, Suspense, useEffect,
+  FC, Suspense, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
@@ -9,23 +9,23 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AppRouter } from './providers/RouterProvider';
 
 const App: FC = () => {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(userActions.initAuhtData());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(userActions.initAuhtData());
+  }, [dispatch]);
 
-    return (
-        <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    <AppRouter />
-                </div>
-            </Suspense>
+  return (
+    <div className={classNames('app', {}, [])}>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
         </div>
-    );
+      </Suspense>
+    </div>
+  );
 };
 
 export default App;

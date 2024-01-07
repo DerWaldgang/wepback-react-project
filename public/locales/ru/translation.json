@@ -17,5 +17,11 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "Your name": "Ваше имя",
-  "Your surname": "Ваша фамилия"
+  "Your surname": "Ваша фамилия",
+  "Failed to get profile data": "Неудалось загрузить данные пользователя",
+  "Cancel": "Отменить",
+  "Save": "Cохранить",
+  "Your city": "Ваш город",
+  "Your age": "Ваш возраст",
+  "Your username": "Ваше имя пользователя"
 }

@@ -1,5 +1,5 @@
 import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
@@ -40,4 +40,5 @@ export interface ThunkConfig<T> {
     rejectValue: T,
     extra: ThunkExtraArguments,
     dispatch: AppDispatchType,
+    state: StateSchema;
 }

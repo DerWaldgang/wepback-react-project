@@ -8,11 +8,11 @@ className?: string;
 }
 
 export const NotFoundPage: FC<NotFoundPageProps> = ({ className }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className={classNames(styles.NotFoundPage, {}, [className])}>
-            {t('NotFound')}
-        </div>
-    );
+  return (
+    <div className={classNames(styles.NotFoundPage, {}, [className])}>
+      {t('NotFound')}
+    </div>
+  );
 };

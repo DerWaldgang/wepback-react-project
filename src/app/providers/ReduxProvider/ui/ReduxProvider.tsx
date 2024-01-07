@@ -12,17 +12,17 @@ interface ReduxProviderProps {
 }
 
 export const ReduxProvider = (props: ReduxProviderProps) => {
-    const {
-        children,
-        initialState,
-    } = props;
+  const {
+    children,
+    initialState,
+  } = props;
 
-    const navigate = useNavigate();
-    const store = createReduxStore(navigate, initialState as StateSchema);
+  const navigate = useNavigate();
+  const store = createReduxStore(navigate, initialState as StateSchema);
 
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      {children}
+    </Provider>
+  );
 };

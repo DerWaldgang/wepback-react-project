@@ -8,7 +8,7 @@ className?: string;
 }
 
 export const PageLoader: FC<PageLoaderProps> = ({ className }) => (
-    <div className={classNames(styles.PageLoader, {}, [className])}>
-        <Loader />
-    </div>
+  <div className={classNames(styles.PageLoader, {}, [className])}>
+    <Loader />
+  </div>
 );
