@@ -12,7 +12,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
   // в конфигурациях а можно в скрипте в package 'webpack server --open'
   return {
     port: options.port,
-    open: true,
+    open: false,
     // нужно чтобы запоминал свои роут, иначе если перейти на страницу /about с главной страницы все будет работать,
     // а потом обновить страницу то /about выдаст ошибку что нет такой страницы
     historyApiFallback: true,

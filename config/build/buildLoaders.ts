@@ -21,7 +21,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
               keyAsDefaultValue: true,
             },
           ],
-        ],
+          options.isDev && require.resolve('react-refresh/babel'),
+        ].filter(Boolean),
       },
     },
   };

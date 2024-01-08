@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const HomePage: FC = () => {
   const { t } = useTranslation('');
   return (
-    <div>
+    <div style={{ color: 'red' }}>
       {t('Home')}
       <Counter />
     </div>
